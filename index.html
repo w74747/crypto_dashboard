@@ -46,7 +46,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .auth-logo svg{width:28px;height:28px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;}
 .auth-title{font-size:22px;font-weight:600;color:var(--text);margin-bottom:6px}
 .auth-sub{font-size:13px;color:var(--text3);margin-bottom:32px;line-height:1.6}
-.otp-row{display:flex;gap:8px;justify-content:center;margin-bottom:8px}
+.otp-row{display:flex;gap:8px;justify-content:center;margin-bottom:8px;direction:ltr}
 .otp-input{
   width:44px;height:52px;text-align:center;font-family:var(--mono);
   font-size:20px;font-weight:500;border:1.5px solid var(--border2);
@@ -395,9 +395,9 @@ tr:hover td{background:var(--surface2)}
 <script>
 // ── CONFIG ──────────────────────────────────────────
 // استبدل هذه القيم بقيمك الفعلية
-const SUPABASE_URL  = 'postgresql://postgres.gbpkeilgziptkprwcfwg:bbaHFu7guQ$27B4@aws-1-ap-northeast-2.pooler.supabase.com:5432/postgres';
-const SUPABASE_KEY  = 'sb_publishable_HWIZ-lhHLpPZPltLrprhjg_2XQtRCR4';
-const TOTP_SECRET   = 'ABCRYPTOMCTABBAOMARAB'; // نفس السر الذي مسحته في Google Authenticator
+const SUPABASE_URL  = 'YOUR_SUPABASE_URL';
+const SUPABASE_KEY  = 'YOUR_SUPABASE_ANON_KEY';
+const TOTP_SECRET   = 'YOUR_TOTP_SECRET_BASE32'; // نفس السر الذي مسحته في Google Authenticator
 const PAGE_SIZE     = 20;
 
 // ── TOTP ENGINE ─────────────────────────────────────
