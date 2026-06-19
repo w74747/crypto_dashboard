@@ -410,9 +410,9 @@ function b32decode(s){
 }
 async function totp(secret){
   const key=b32decode(secret);
-  const T=Math.floor(Date.now()/1000/30);
+  let T=Math.floor(Date.now()/1000/30);
   const tb=new Uint8Array(8);
-  for(let i=7;i>=0;i--){tb[i]=T&255;T>>=8}
+  for(let i=7;i>=0;i--){tb[i]=T&255;T=Math.floor(T/256)}
   const k=await crypto.subtle.importKey('raw',key,{name:'HMAC',hash:'SHA-1'},false,['sign']);
   const sig=new Uint8Array(await crypto.subtle.sign('HMAC',k,tb));
   const o=sig[19]&0xf;
